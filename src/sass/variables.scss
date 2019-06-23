@@ -1,0 +1,60 @@
+$primaryColor: #27ab83;
+$secondaryColor: #627d98;
+
+$appWidth: 1300px;
+$headerHeight: 70px;
+$sidbarWidth: 150px;
+
+// Media Queries
+
+$mobileSmallMediaQuery: 350px;
+$mobileMediaQuery: 500px;
+$tabletSmallMediaQuery: 767px;
+$tabletLargeMediaQuery: 991px;
+
+@mixin shaddow {
+	box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.2);
+}
+
+@mixin placeholder {
+	&::-webkit-input-placeholder {
+		@content;
+	}
+	&:-moz-placeholder {
+		@content;
+	}
+	&::-moz-placeholder {
+		@content;
+	}
+	&:-ms-input-placeholder {
+		@content;
+	}
+}
+
+@mixin downArrow($arrowSize, $color) {
+	width: 0;
+	height: 0;
+	border-left: $arrowSize solid transparent;
+	border-right: $arrowSize solid transparent;
+	border-top: $arrowSize solid $color;
+}
+
+@mixin upArrow($arrowSize, $color) {
+	width: 0;
+	height: 0;
+	border-left: $arrowSize solid transparent;
+	border-right: $arrowSize solid transparent;
+	border-bottom: $arrowSize solid $color;
+}
+
+@media only screen and (max-width: 500px) {
+}
+
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+}
+
+@media only screen and (min-width: 992px) {
+}

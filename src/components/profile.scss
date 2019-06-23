@@ -1,0 +1,113 @@
+@import '../sass/variables.scss';
+
+.profile {
+	padding: 50px 100px;
+	padding-bottom: 70px;
+
+	.content-container {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		.profile-img-wrapper {
+			$imgSize: 170px;
+
+			margin-right: 80px;
+
+			img {
+				border: 2px solid $secondaryColor;
+				width: $imgSize;
+				height: $imgSize;
+				border-radius: 50%;
+				overflow: hidden;
+			}
+
+			#profile-img-input {
+				display: none;
+			}
+
+			.img-label {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				width: $imgSize;
+				margin-top: 20px;
+				padding-right: 0;
+				padding-left: 0;
+
+				svg {
+					cursor: pointer;
+					margin-left: 10px;
+				}
+			}
+		}
+
+		form {
+			flex: 1;
+
+			.two-per-row {
+				display: flex;
+
+				.themed-textfield {
+					flex: 1;
+					&:last-of-type {
+						margin-left: 40px;
+					}
+				}
+			}
+
+			.textfield-container {
+				&:not(:last-of-type) {
+					margin-bottom: 40px;
+				}
+			}
+
+			.submit-section {
+				justify-content: flex-end;
+				display: flex;
+
+				input[type='button'] {
+					padding: 12px 60px;
+					margin-top: 40px;
+					order: 1;
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $tabletLargeMediaQuery) {
+	.profile {
+		padding: 50px 30px;
+
+		.content-container {
+			flex-direction: column;
+
+			.profile-img-wrapper {
+				margin-right: 0;
+				margin-bottom: 40px;
+			}
+
+			form .two-per-row .themed-textfield:last-of-type {
+				margin-left: 20px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $mobileSmallMediaQuery) {
+	.profile {
+		form .two-per-row {
+			flex-direction: column;
+
+			.themed-textfield:last-of-type {
+				margin-left: 0px !important;
+				margin-top: 20px;
+			}
+		}
+
+		.textfield-container:not(:last-of-type) {
+			margin-bottom: 20px !important;
+		}
+	}
+}

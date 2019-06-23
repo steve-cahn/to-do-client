@@ -1,0 +1,93 @@
+@import '../../sass/variables.scss';
+
+.register-login {
+	display: flex;
+
+	.img-wrapper {
+		width: 50%;
+		background-color: $primaryColor;
+		position: relative;
+		z-index: -1;
+
+		img {
+			width: 125%;
+			position: absolute;
+			bottom: 5px;
+			left: 40px;
+		}
+	}
+
+	form {
+		padding: 50px 100px;
+		width: 50%;
+		display: flex;
+		flex-direction: column;
+
+		.textfild-wrapper {
+			display: flex;
+			flex-direction: column;
+
+			&:not(:last-of-type) {
+				margin-bottom: 10px;
+			}
+
+			.error {
+				color: red;
+				font-size: 11px;
+				margin-top: 5px;
+				opacity: 0;
+
+				&.show {
+					opacity: 1;
+				}
+			}
+		}
+
+		.forgot-pass {
+			color: $secondaryColor;
+			font-size: 13px;
+			margin-top: 10px;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.have-account {
+			color: $secondaryColor;
+			text-align: center;
+			margin-top: 20px;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		input[type='button'] {
+			text-transform: capitalize;
+			margin-top: 40px;
+		}
+
+		.incorrect-cred {
+			text-align: center;
+			color: red;
+			margin-top: 20px;
+		}
+	}
+
+	.message {
+		padding: 120px 0;
+	}
+}
+
+@media only screen and (max-width: $tabletLargeMediaQuery) {
+	.register-login {
+		background-color: lighten($primaryColor, 54%);
+
+		form {
+			margin: auto;
+		}
+	}
+}

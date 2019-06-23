@@ -1,0 +1,238 @@
+@import '../../sass/variables.scss';
+
+@mixin transitionDelay {
+	@for $i from 1 to 5 {
+		&:nth-child(#{$i}) {
+			span {
+				$delayAmount: $i * 0.5;
+				animation-delay: $delayAmount + s;
+			}
+		}
+	}
+}
+
+.to-do {
+	display: flex;
+	width: 100%;
+	flex: 1;
+
+	.main-content {
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			margin-left: 38px;
+			font-size: 17px;
+			display: flex;
+			flex-direction: column;
+
+			&:hover {
+				background-color: white;
+				color: $primaryColor;
+			}
+
+			svg {
+				border-radius: 50%;
+				font-size: 30px;
+				background-color: $primaryColor;
+				border: 2px solid $primaryColor;
+				color: white;
+			}
+		}
+	}
+
+	table {
+		border-collapse: collapse;
+		flex: 1;
+
+		th,
+		td {
+			padding: 0 40px;
+		}
+
+		tr {
+			height: 55px;
+
+			th,
+			td {
+				text-align: center;
+
+				&:first-of-type {
+					text-align: left;
+				}
+			}
+		}
+
+		thead {
+			th {
+				color: rgba(0, 0, 0, 0.4);
+				font-size: 13px;
+			}
+		}
+
+		tbody {
+			overflow: auto;
+			tr {
+				&:nth-child(odd) {
+					background-color: lighten($primaryColor, 57);
+				}
+
+				td {
+					color: $secondaryColor;
+					font-size: 16px;
+				}
+
+				button {
+					color: $primaryColor;
+					text-decoration: underline;
+				}
+			}
+
+			.new-to-do-item-row {
+				input[type='text'] {
+					height: 55px;
+					width: 100%;
+					font-size: 18px;
+					color: $primaryColor;
+					background-color: lighten($secondaryColor, 45);
+					padding: 0 20px;
+					border-radius: 7px;
+
+					@include placeholder {
+						color: lighten($secondaryColor, 25);
+					}
+				}
+
+				td {
+					color: $primaryColor;
+				}
+
+				button {
+					padding-right: 40px;
+					padding-left: 40px;
+					text-decoration: none;
+					color: white;
+
+					&:hover {
+						color: $primaryColor;
+					}
+				}
+			}
+		}
+
+		tbody.empty {
+			td {
+				@include transitionDelay;
+				span {
+					background-color: #627d98;
+					height: 15px;
+					display: block;
+					animation-duration: 2s;
+					animation-iteration-count: infinite;
+					animation-fill-mode: forwards;
+					animation-timing-function: linear;
+					background: #f6f7f8;
+					background: linear-gradient(
+						to right,
+						#eeeeee 8%,
+						#c3c3c3 18%,
+						#eeeeee 33%
+					);
+					background-size: 1200px 104px;
+					animation-name: plachodlerAnimation;
+					position: relative;
+				}
+			}
+		}
+	}
+}
+
+@keyframes plachodlerAnimation {
+	0% {
+		background-position: -468px 0;
+	}
+	50% {
+		background-position: -468px 0;
+	}
+
+	100% {
+		background-position: 468px 0;
+	}
+}
+
+@media only screen and (max-width: $tabletSmallMediaQuery) {
+	.to-do {
+		flex-direction: column;
+
+		table {
+			th:last-of-type {
+				text-align: right;
+			}
+
+			td {
+				width: initial;
+
+				&:last-of-type {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					align-items: flex-end;
+					height: 55px;
+					padding: 10px 0;
+					padding-right: 10px;
+				}
+			}
+
+			.new-to-do-item-row {
+				td {
+					&:first-of-type {
+						width: 70%;
+					}
+
+					.button {
+						padding-right: 20px;
+						padding-left: 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $mobileMediaQuery) {
+	.new-to-do-item-row {
+		.button {
+			padding: 10px;
+		}
+	}
+}
+
+@media only screen and (min-width: $tabletSmallMediaQuery) {
+	.to-do {
+		table {
+			margin-top: 25px;
+
+			tr {
+				&:not(.new-to-do-item-row) {
+					td {
+						&:nth-child(2) {
+							width: 185px;
+							line-height: 55px;
+						}
+					}
+				}
+			}
+
+			.new-to-do-item-row {
+				td {
+					&:nth-child(2) {
+						padding: 0;
+					}
+				}
+				button {
+					width: 150px;
+				}
+			}
+		}
+	}
+}

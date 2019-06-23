@@ -1,0 +1,56 @@
+@import './variables.scss';
+
+.page-title {
+	text-align: center;
+	font-weight: 400;
+	font-size: 35px;
+	margin-bottom: 30px;
+	text-transform: capitalize;
+}
+
+.button {
+	cursor: pointer;
+	background-color: $primaryColor;
+	border: 2px solid $primaryColor;
+	color: white;
+	font-size: 15px;
+	padding: 10px 10px;
+	border-radius: 4px;
+
+	&:hover {
+		color: $secondaryColor;
+		border-color: $secondaryColor;
+		background-color: white;
+	}
+
+	&.inverted {
+		color: $secondaryColor;
+		border-color: $secondaryColor;
+		background-color: white;
+
+		&:hover {
+			background-color: $primaryColor;
+			border: 2px solid $primaryColor;
+			color: white;
+		}
+	}
+}
+
+// Textfield Theming
+.themed-textfield {
+	.MuiInputBase-root-45 {
+		color: $secondaryColor;
+	}
+
+	.MuiInput-underline-36:hover:not(.MuiInput-disabled-35):not(.MuiInput-focused-34):not(.MuiInput-error-37):before {
+		border-color: $secondaryColor;
+	}
+
+	.MuiInput-underline-36:after {
+		border-color: $primaryColor;
+	}
+
+	.MuiFormLabel-focused-26 {
+		color: $primaryColor;
+	}
+}

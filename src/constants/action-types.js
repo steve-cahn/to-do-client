@@ -1,0 +1,11 @@
+const MESSAGE = 'MESSAGE';
+const USER = 'USER';
+const SEARCH_QUERY = 'SEARCH_QUERY';
+const WINDOW_WIDTH = 'WINDOW_WIDTH';
+
+export default {
+	MESSAGE,
+	USER,
+	SEARCH_QUERY,
+	WINDOW_WIDTH
+};

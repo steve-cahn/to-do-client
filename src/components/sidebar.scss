@@ -1,0 +1,73 @@
+@import '../sass/variables.scss';
+
+.side-bar {
+	width: $sidbarWidth;
+	background-color: lighten($primaryColor, 50);
+	flex-shrink: 0;
+
+	ul {
+		li {
+			border-bottom: 1px solid lighten($secondaryColor, 35);
+		}
+		a {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: center;
+			color: $secondaryColor;
+			height: $sidbarWidth;
+
+			> * {
+				opacity: 0.7;
+			}
+
+			&.active {
+				color: white;
+				background-color: $primaryColor;
+
+				> * {
+					opacity: 1;
+				}
+			}
+
+			svg {
+				height: 45px;
+				width: 45px;
+				fill: currentColor;
+			}
+
+			span {
+				margin-top: 10px;
+			}
+		}
+	}
+}
+
+@media only screen and (max-width: $mobileMediaQuery) {
+	.side-bar {
+		margin-top: 25px;
+	}
+}
+
+@media only screen and (max-width: $tabletSmallMediaQuery) {
+	.side-bar {
+		width: 100%;
+		margin-top: 25px;
+
+		ul {
+			display: flex;
+			justify-content: space-between;
+
+			li {
+				flex: 1;
+
+				a {
+					height: 120px;
+					font-size: 13px;
+					padding: 0 10px;
+					text-align: center;
+				}
+			}
+		}
+	}
+}

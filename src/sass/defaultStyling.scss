@@ -1,0 +1,27 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+th {
+	font-weight: inherit;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+button,
+input {
+	outline: none;
+	border: none;
+}
+
+button {
+	background: none;
+}
